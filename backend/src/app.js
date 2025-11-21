@@ -7,8 +7,8 @@ const app=express()
 app.use (express.json())
 app.use(cors())
 
-const {authRouter}=require("./routes/auth");
+const {userRouter}=require("./routes/user");
 
-app.use("/auth",authRouter);
+app.use("/user",userRouter);
 
 module.exports=app;

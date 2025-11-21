@@ -18,8 +18,11 @@ userRouter.post("/signup",async(req,res)=>{
         .refine(hasuppercase,{message:"should contain a uppercase"})
         .refine(haslowercase,{message:"should contain a lowercase"})
         .refine(specialcase,{message:"should contain a specialcase"}),
-
         name: z.string().min(1),
+        phone: z.string().optional(),
+        companyName: z.string().optional(),
+        role: z.enum(["exporter", "importer", "qa"])
+
         
     })
 
@@ -35,7 +38,7 @@ userRouter.post("/signup",async(req,res)=>{
 
     const {email,password,name,phone ,companyName,role}=parsedatawithsuccess.data
 
-    const hashedpassword=await bcrypt.hash(password,5)
+    const hashedpassword=await bcrypt.hash(password,10)
 
     try{
         await userModel.create({
@@ -56,3 +59,5 @@ userRouter.post("/signup",async(req,res)=>{
         })
     }
 })
+
+module.exports ={userRouter}
