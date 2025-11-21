@@ -1,4 +1,4 @@
-# 👥 Collaborators Guide (For Our Team)
+# 👥 Team Guide
 
 This file is just for us so we don’t mess up the repo 😭  
 Read this before doing anything.
@@ -21,16 +21,20 @@ Read this before doing anything.
 ### ✔ Rule 1: **DON’T TOUCH `main` BRANCH**
 Never push directly to `main`.  
 Work on your own branch.
+seriously dont mess with main branch.
+dont even use the word main after git use your own branch mayank will handle all mergin and shit.
 
-### ✔ Rule 2: **Always Pull Before You Start Working**
+### ✔ Rule 2: " comments "
+on every fucntion there must be a comment even one word will suffice just remember "when you go home i will be under your bed"
 
+### ✔ Rule 3: **Always Pull Before You Start Working**
 
 Do this EVERY time before coding.
 
-### ✔ Rule 3: **Don’t break the project 😭**
+### ✔ Rule 4: **Don’t break the project 😭**
 If you change something important, tell the group.
 
-### ✔ Rule 4: **Commit properly**
+### ✔ Rule 5: **Commit properly**
 
 Example:
 
