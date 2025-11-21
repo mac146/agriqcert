@@ -60,4 +60,44 @@ userRouter.post("/signup",async(req,res)=>{
     }
 })
 
-module.exports ={userRouter}
+userRouter.post("/signin",async(req,res)=>{
+    const {email,password}=req.body
+try{
+    const user=await userModel.findOne({
+        where:{email}
+    })
+    if(!user){
+        return res.json({
+            message:"user not found"
+        })
+    }
+    const matchedpassword=await bcrypt.compare(password,user.password)
+    if(matchedpassword){
+        const token=jwt.sign({userid: user.id,
+            
+        }, Jwt_USER_SECRET)
+       res.json({
+        message: "Login successful",
+        token
+    })
+    }
+    else{
+        return res.json({
+            message:"invalid password"
+        })
+    }
+    
+}catch(e){
+    return res.json({
+        message:"internal error"
+    })
+}
+})
+
+userRouter.get("/", (req, res) => {
+  res.json({ message: "User routes are live!" });
+});
+
+module.exports = { userRouter };
+
+
