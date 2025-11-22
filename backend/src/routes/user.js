@@ -95,7 +95,9 @@ try{
 })
 
 userRouter.get("/profile", usermiddleware,(req, res) => {
-  res.json({ message: "User routes are live!" });
+  res.json({
+    userid:req.userid
+  })
 });
 
 module.exports = { userRouter };
