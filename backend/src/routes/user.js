@@ -94,7 +94,7 @@ try{
 }
 })
 
-userRouter.get("/", (req, res) => {
+userRouter.get("/profile", usermiddleware,(req, res) => {
   res.json({ message: "User routes are live!" });
 });
 
