@@ -4,7 +4,7 @@ const jwt=require('jsonwebtoken')
 const z=require('zod')
 const bcrypt=require('bcrypt')
 const Jwt_USER_SECRET=process.env.Jwt_USER_SECRET
-const {userModel}=require("../models/db")
+const {userModel}=require("../models/user")
 const usermiddleware = require('../middleware/usermiddleware');
 
 userRouter.post("/signup",async(req,res)=>{

@@ -74,3 +74,5 @@ const consignment= sequelize.define("consignment",{
     
     
 })
+
+module.exports=consignment
